@@ -6,6 +6,7 @@ class AC_iOS_QueuesExercisesTests: XCTestCase {
     var myQueue = Queue<Int>()
     var otherQueue = Queue<Int>()
     var emptyQueue = Queue<Int>()
+    var bensSpecialQueue = Queue<Int>()
     
     override func setUp() {
         super.setUp()
@@ -23,6 +24,10 @@ class AC_iOS_QueuesExercisesTests: XCTestCase {
         otherQueue.enqueue(11)
         otherQueue.enqueue(9)
         
+        bensSpecialQueue.enqueue(3)
+        bensSpecialQueue.enqueue(1)
+        bensSpecialQueue.enqueue(2)
+        
     }
     
     override func tearDown() {
@@ -39,6 +44,7 @@ class AC_iOS_QueuesExercisesTests: XCTestCase {
     }
     
     func testSmallest() {
+        XCTAssertTrue(smallestElement(in: bensSpecialQueue) == 1)
         XCTAssertTrue(smallestElement(in: myQueue) == 5)
         XCTAssertTrue(smallestElement(in: otherQueue) == 8)
         XCTAssertNil(smallestElement(in: emptyQueue))
